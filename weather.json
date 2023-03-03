@@ -1,0 +1,26 @@
+{
+  "coord": { "lon": 73.8, "lat": 19.9833 },
+  "weather": [
+    { "id": 800, "main": "Clear", "description": "clear sky", "icon": "01n" }
+  ],
+  "base": "stations",
+  "main": {
+    "temp": 300.53,
+    "feels_like": 299.53,
+    "temp_min": 300.53,
+    "temp_max": 300.53,
+    "pressure": 1016,
+    "humidity": 22,
+    "sea_level": 1016,
+    "grnd_level": 952
+  },
+  "visibility": 10000,
+  "wind": { "speed": 2.26, "deg": 67, "gust": 2.38 },
+  "clouds": { "all": 0 },
+  "dt": 1677764716,
+  "sys": { "country": "IN", "sunrise": 1677720270, "sunset": 1677762599 },
+  "timezone": 19800,
+  "id": 1261731,
+  "name": "Nashik",
+  "cod": 200
+}
