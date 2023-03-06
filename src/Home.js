@@ -1,11 +1,13 @@
+import React from "react";
 import axios from "axios";
 import { useState } from "react";
 
-function App() {
+function Home() {
   const [data, setData] = useState({});
   const [location, setLocation] = useState("");
 
-  const url = `https://api.openweathermap.org/data/2.5/weather?q=${location}&units=metric&appid=146f21d5dd7e67d75fc1ffbbcbe370ba`;
+  const url = `https://api.weatherapi.com/v1/current.json?key=103f0fde0e554cbb9bc181443230702&q=${location}&aqi=no
+  `;
 
   const searchLocation = (event) => {
     if (event.key === "Enter") {
@@ -16,15 +18,6 @@ function App() {
       setLocation("");
     }
   };
-
-  let rise = data.sys ? data.sys.sunrise : null;
-  let risedate = new Date(rise * 1000);
-  let sunrise = `${risedate.getHours()}:${risedate.getMinutes()}`;
-
-  let set = data.sys ? data.sys.sunset : null;
-  let setdate = new Date(set * 1000);
-  let sunset = `${setdate.getHours()}:${setdate.getMinutes()}`;
-
   return (
     <div className="app">
       <div className="search">
@@ -49,9 +42,9 @@ function App() {
             {data.main ? <h1>{data.main.temp.toFixed()}°C</h1> : null}
           </div>
 
-          {/* <div className="date">
-            {data2.location ? <p>{data2.location.localtime} </p> : null}
-          </div> */}
+          <div className="date">
+            {data.location ? <p>{data.location.localtime} </p> : null}
+          </div>
 
           <div className="description">
             {data.weather ? <p>{data.weather[0].main}</p> : null}
@@ -60,14 +53,14 @@ function App() {
 
         {data.name != undefined && (
           <div className="bottom">
-            <div className="sunrise">
+            {/* <div className="sunrise">
               <p className="bold">{sunrise}</p>
               <p>Sunrise</p>
             </div>
             <div className="sunset">
               <p className="bold">{sunset}</p>
               <p>Sunset</p>
-            </div>
+            </div> */}
             <div className="pressure">
               {data.main ? (
                 <p className="bold">{data.main.pressure} hPa</p>
@@ -101,4 +94,4 @@ function App() {
   );
 }
 
-export default App;
+export default Home;
